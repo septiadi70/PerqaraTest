@@ -13,6 +13,11 @@
 		27E214D22A8A698900E66805 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E214D02A8A698900E66805 /* Main.storyboard */; };
 		27E214D42A8A698A00E66805 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E214D32A8A698A00E66805 /* Assets.xcassets */; };
 		27E214D72A8A698A00E66805 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E214D52A8A698A00E66805 /* LaunchScreen.storyboard */; };
+		27E214E02A8A6C9500E66805 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214DF2A8A6C9500E66805 /* NetworkConfig.swift */; };
+		27E214E22A8A6E2700E66805 /* NetworkEndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214E12A8A6E2700E66805 /* NetworkEndpointProtocol.swift */; };
+		27E214E72A8A710300E66805 /* GameEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214E62A8A710300E66805 /* GameEndpoint.swift */; };
+		27E214E92A8A759200E66805 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214E82A8A759200E66805 /* NetworkService.swift */; };
+		27E214EC2A8A769B00E66805 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214EB2A8A769B00E66805 /* AppError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		27E214D32A8A698A00E66805 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27E214D62A8A698A00E66805 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27E214D82A8A698A00E66805 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27E214DF2A8A6C9500E66805 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		27E214E12A8A6E2700E66805 /* NetworkEndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndpointProtocol.swift; sourceTree = "<group>"; };
+		27E214E62A8A710300E66805 /* GameEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndpoint.swift; sourceTree = "<group>"; };
+		27E214E82A8A759200E66805 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		27E214EB2A8A769B00E66805 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,8 @@
 		27E214C92A8A698900E66805 /* PerqaraTest */ = {
 			isa = PBXGroup;
 			children = (
+				27E214EA2A8A768F00E66805 /* Helper */,
+				27E214DE2A8A6C4D00E66805 /* Service */,
 				27E214CA2A8A698900E66805 /* AppDelegate.swift */,
 				27E214CC2A8A698900E66805 /* SceneDelegate.swift */,
 				27E214CE2A8A698900E66805 /* ViewController.swift */,
@@ -65,6 +77,33 @@
 				27E214D82A8A698A00E66805 /* Info.plist */,
 			);
 			path = PerqaraTest;
+			sourceTree = "<group>";
+		};
+		27E214DE2A8A6C4D00E66805 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				27E214E52A8A70F700E66805 /* Endpoint */,
+				27E214DF2A8A6C9500E66805 /* NetworkConfig.swift */,
+				27E214E12A8A6E2700E66805 /* NetworkEndpointProtocol.swift */,
+				27E214E82A8A759200E66805 /* NetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		27E214E52A8A70F700E66805 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				27E214E62A8A710300E66805 /* GameEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		27E214EA2A8A768F00E66805 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				27E214EB2A8A769B00E66805 /* AppError.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E214E22A8A6E2700E66805 /* NetworkEndpointProtocol.swift in Sources */,
 				27E214CF2A8A698900E66805 /* ViewController.swift in Sources */,
 				27E214CB2A8A698900E66805 /* AppDelegate.swift in Sources */,
+				27E214E02A8A6C9500E66805 /* NetworkConfig.swift in Sources */,
+				27E214EC2A8A769B00E66805 /* AppError.swift in Sources */,
+				27E214E72A8A710300E66805 /* GameEndpoint.swift in Sources */,
 				27E214CD2A8A698900E66805 /* SceneDelegate.swift in Sources */,
+				27E214E92A8A759200E66805 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
