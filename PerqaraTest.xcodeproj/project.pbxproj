@@ -27,6 +27,13 @@
 		27E215002A8AFBA400E66805 /* ListGameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214FF2A8AFBA400E66805 /* ListGameResponse.swift */; };
 		27E215032A8B244500E66805 /* PublisherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E215022A8B244500E66805 /* PublisherModel.swift */; };
 		27E215052A8B264900E66805 /* GameAddedStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E215042A8B264900E66805 /* GameAddedStatusModel.swift */; };
+		27E215082A8B318400E66805 /* ListGamesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E215072A8B318400E66805 /* ListGamesUseCase.swift */; };
+		27E2150C2A8B330700E66805 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2150B2A8B330700E66805 /* TabViewController.swift */; };
+		27E215102A8B33F500E66805 /* ListGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2150E2A8B33F500E66805 /* ListGamesViewController.swift */; };
+		27E215112A8B33F500E66805 /* ListGamesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27E2150F2A8B33F500E66805 /* ListGamesViewController.xib */; };
+		27E215152A8B343B00E66805 /* ListFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E215132A8B343B00E66805 /* ListFavoritesViewController.swift */; };
+		27E215162A8B343B00E66805 /* ListFavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27E215142A8B343B00E66805 /* ListFavoritesViewController.xib */; };
+		27E215192A8B348E00E66805 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E215182A8B348E00E66805 /* UIColorExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +59,13 @@
 		27E214FF2A8AFBA400E66805 /* ListGameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGameResponse.swift; sourceTree = "<group>"; };
 		27E215022A8B244500E66805 /* PublisherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherModel.swift; sourceTree = "<group>"; };
 		27E215042A8B264900E66805 /* GameAddedStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAddedStatusModel.swift; sourceTree = "<group>"; };
+		27E215072A8B318400E66805 /* ListGamesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGamesUseCase.swift; sourceTree = "<group>"; };
+		27E2150B2A8B330700E66805 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		27E2150E2A8B33F500E66805 /* ListGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGamesViewController.swift; sourceTree = "<group>"; };
+		27E2150F2A8B33F500E66805 /* ListGamesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListGamesViewController.xib; sourceTree = "<group>"; };
+		27E215132A8B343B00E66805 /* ListFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFavoritesViewController.swift; sourceTree = "<group>"; };
+		27E215142A8B343B00E66805 /* ListFavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFavoritesViewController.xib; sourceTree = "<group>"; };
+		27E215182A8B348E00E66805 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +98,7 @@
 		27E214C92A8A698900E66805 /* PerqaraTest */ = {
 			isa = PBXGroup;
 			children = (
+				27E215092A8B32D800E66805 /* UI */,
 				27E215012A8B216A00E66805 /* Domain */,
 				27E214FB2A8AF4E400E66805 /* Model */,
 				27E214ED2A8A77C000E66805 /* Data */,
@@ -122,6 +137,7 @@
 		27E214EA2A8A768F00E66805 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				27E215172A8B348200E66805 /* Extension */,
 				27E214EB2A8A769B00E66805 /* AppError.swift */,
 				27E214F92A8A7D2200E66805 /* Injection.swift */,
 			);
@@ -177,8 +193,61 @@
 		27E215012A8B216A00E66805 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				27E215062A8B316000E66805 /* UseCase */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		27E215062A8B316000E66805 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				27E215072A8B318400E66805 /* ListGamesUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		27E215092A8B32D800E66805 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				27E215122A8B342700E66805 /* ListFavorites */,
+				27E2150D2A8B33D500E66805 /* ListGames */,
+				27E2150A2A8B32EB00E66805 /* Tab */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		27E2150A2A8B32EB00E66805 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				27E2150B2A8B330700E66805 /* TabViewController.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		27E2150D2A8B33D500E66805 /* ListGames */ = {
+			isa = PBXGroup;
+			children = (
+				27E2150E2A8B33F500E66805 /* ListGamesViewController.swift */,
+				27E2150F2A8B33F500E66805 /* ListGamesViewController.xib */,
+			);
+			path = ListGames;
+			sourceTree = "<group>";
+		};
+		27E215122A8B342700E66805 /* ListFavorites */ = {
+			isa = PBXGroup;
+			children = (
+				27E215132A8B343B00E66805 /* ListFavoritesViewController.swift */,
+				27E215142A8B343B00E66805 /* ListFavoritesViewController.xib */,
+			);
+			path = ListFavorites;
+			sourceTree = "<group>";
+		};
+		27E215172A8B348200E66805 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				27E215182A8B348E00E66805 /* UIColorExt.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +308,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E215162A8B343B00E66805 /* ListFavoritesViewController.xib in Resources */,
+				27E215112A8B33F500E66805 /* ListGamesViewController.xib in Resources */,
 				27E214D72A8A698A00E66805 /* LaunchScreen.storyboard in Resources */,
 				27E214D42A8A698A00E66805 /* Assets.xcassets in Resources */,
 				27E214D22A8A698900E66805 /* Main.storyboard in Resources */,
@@ -252,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E215102A8B33F500E66805 /* ListGamesViewController.swift in Sources */,
 				27E214FA2A8A7D2200E66805 /* Injection.swift in Sources */,
 				27E214E22A8A6E2700E66805 /* NetworkEndpointProtocol.swift in Sources */,
 				27E214CF2A8A698900E66805 /* ViewController.swift in Sources */,
@@ -259,16 +331,20 @@
 				27E214F02A8A782600E66805 /* GameRemoteDataSource.swift in Sources */,
 				27E214FD2A8AF4F700E66805 /* GameModel.swift in Sources */,
 				27E214CB2A8A698900E66805 /* AppDelegate.swift in Sources */,
+				27E215152A8B343B00E66805 /* ListFavoritesViewController.swift in Sources */,
 				27E214F52A8A7B9600E66805 /* GameRepository.swift in Sources */,
 				27E214E02A8A6C9500E66805 /* NetworkConfig.swift in Sources */,
 				27E214F72A8A7BA300E66805 /* GameRepositoryProtocol.swift in Sources */,
 				27E214EC2A8A769B00E66805 /* AppError.swift in Sources */,
 				27E214E72A8A710300E66805 /* GameEndpoint.swift in Sources */,
 				27E214CD2A8A698900E66805 /* SceneDelegate.swift in Sources */,
+				27E215082A8B318400E66805 /* ListGamesUseCase.swift in Sources */,
 				27E215002A8AFBA400E66805 /* ListGameResponse.swift in Sources */,
 				27E215052A8B264900E66805 /* GameAddedStatusModel.swift in Sources */,
 				27E215032A8B244500E66805 /* PublisherModel.swift in Sources */,
+				27E215192A8B348E00E66805 /* UIColorExt.swift in Sources */,
 				27E214E92A8A759200E66805 /* NetworkService.swift in Sources */,
+				27E2150C2A8B330700E66805 /* TabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
