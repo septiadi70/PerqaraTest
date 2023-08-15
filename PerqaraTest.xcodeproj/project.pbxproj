@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		277979B82A8B8381009F9EEB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979B62A8B8381009F9EEB /* DetailViewController.swift */; };
+		277979B92A8B8381009F9EEB /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 277979B72A8B8381009F9EEB /* DetailViewController.xib */; };
+		277979BD2A8B8799009F9EEB /* LoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979BC2A8B8799009F9EEB /* LoveButton.swift */; };
 		27E214CB2A8A698900E66805 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214CA2A8A698900E66805 /* AppDelegate.swift */; };
 		27E214CD2A8A698900E66805 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214CC2A8A698900E66805 /* SceneDelegate.swift */; };
 		27E214CF2A8A698900E66805 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214CE2A8A698900E66805 /* ViewController.swift */; };
@@ -40,6 +43,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		277979B62A8B8381009F9EEB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		277979B72A8B8381009F9EEB /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		277979BC2A8B8799009F9EEB /* LoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveButton.swift; sourceTree = "<group>"; };
 		27E214C72A8A698900E66805 /* PerqaraTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerqaraTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E214CA2A8A698900E66805 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27E214CC2A8A698900E66805 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		277979B52A8B836D009F9EEB /* DetailGame */ = {
+			isa = PBXGroup;
+			children = (
+				277979B62A8B8381009F9EEB /* DetailViewController.swift */,
+				277979B72A8B8381009F9EEB /* DetailViewController.xib */,
+			);
+			path = DetailGame;
+			sourceTree = "<group>";
+		};
 		27E214BE2A8A698900E66805 = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				27E2151C2A8B461400E66805 /* SubViews */,
+				277979B52A8B836D009F9EEB /* DetailGame */,
 				27E215122A8B342700E66805 /* ListFavorites */,
 				27E2150D2A8B33D500E66805 /* ListGames */,
 				27E2150A2A8B32EB00E66805 /* Tab */,
@@ -263,6 +279,7 @@
 			children = (
 				27E2151F2A8B467D00E66805 /* GameTableViewCell.swift */,
 				27E215202A8B467D00E66805 /* GameTableViewCell.xib */,
+				277979BC2A8B8799009F9EEB /* LoveButton.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -327,6 +344,7 @@
 			files = (
 				27E215162A8B343B00E66805 /* ListFavoritesViewController.xib in Resources */,
 				27E215112A8B33F500E66805 /* ListGamesViewController.xib in Resources */,
+				277979B92A8B8381009F9EEB /* DetailViewController.xib in Resources */,
 				27E214D72A8A698A00E66805 /* LaunchScreen.storyboard in Resources */,
 				27E214D42A8A698A00E66805 /* Assets.xcassets in Resources */,
 				27E214D22A8A698900E66805 /* Main.storyboard in Resources */,
@@ -343,12 +361,14 @@
 			files = (
 				27E215102A8B33F500E66805 /* ListGamesViewController.swift in Sources */,
 				27E214FA2A8A7D2200E66805 /* Injection.swift in Sources */,
+				277979B82A8B8381009F9EEB /* DetailViewController.swift in Sources */,
 				27E214E22A8A6E2700E66805 /* NetworkEndpointProtocol.swift in Sources */,
 				27E214CF2A8A698900E66805 /* ViewController.swift in Sources */,
 				27E214F22A8A783A00E66805 /* GameRemoteDataSourceProtocol.swift in Sources */,
 				27E2151B2A8B3F2E00E66805 /* ListGamesViewModel.swift in Sources */,
 				27E214F02A8A782600E66805 /* GameRemoteDataSource.swift in Sources */,
 				27E214FD2A8AF4F700E66805 /* GameModel.swift in Sources */,
+				277979BD2A8B8799009F9EEB /* LoveButton.swift in Sources */,
 				27E214CB2A8A698900E66805 /* AppDelegate.swift in Sources */,
 				27E215152A8B343B00E66805 /* ListFavoritesViewController.swift in Sources */,
 				27E214F52A8A7B9600E66805 /* GameRepository.swift in Sources */,
