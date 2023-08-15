@@ -43,8 +43,17 @@ class TabViewController: UITabBarController {
 
 extension TabViewController {
     private func configTabBar() {
-        tabBar.barTintColor = .mainBlue
-        tabBar.backgroundColor = .tabGray
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .tabGray
+            
+            tabBar.standardAppearance = appearance
+            tabBar.scrollEdgeAppearance = tabBar.standardAppearance
+        } else {
+            tabBar.backgroundColor = .tabGray
+        }
+        
         tabBar.tintColor = .mainBlue
         tabBar.isTranslucent = false
         tabBarItem.setTitleTextAttributes(titleAttributes, for: .normal)
