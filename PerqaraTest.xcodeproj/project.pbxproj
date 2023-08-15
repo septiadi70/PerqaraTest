@@ -23,6 +23,8 @@
 		27E214F52A8A7B9600E66805 /* GameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214F42A8A7B9600E66805 /* GameRepository.swift */; };
 		27E214F72A8A7BA300E66805 /* GameRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214F62A8A7BA300E66805 /* GameRepositoryProtocol.swift */; };
 		27E214FA2A8A7D2200E66805 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214F92A8A7D2200E66805 /* Injection.swift */; };
+		27E214FD2A8AF4F700E66805 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214FC2A8AF4F700E66805 /* GameModel.swift */; };
+		27E215002A8AFBA400E66805 /* ListGameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214FF2A8AFBA400E66805 /* ListGameResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		27E214F42A8A7B9600E66805 /* GameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRepository.swift; sourceTree = "<group>"; };
 		27E214F62A8A7BA300E66805 /* GameRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRepositoryProtocol.swift; sourceTree = "<group>"; };
 		27E214F92A8A7D2200E66805 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
+		27E214FC2A8AF4F700E66805 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		27E214FF2A8AFBA400E66805 /* ListGameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGameResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 		27E214C92A8A698900E66805 /* PerqaraTest */ = {
 			isa = PBXGroup;
 			children = (
+				27E214FB2A8AF4E400E66805 /* Model */,
 				27E214ED2A8A77C000E66805 /* Data */,
 				27E214EA2A8A768F00E66805 /* Helper */,
 				27E214DE2A8A6C4D00E66805 /* Service */,
@@ -143,6 +148,23 @@
 				27E214F42A8A7B9600E66805 /* GameRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		27E214FB2A8AF4E400E66805 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				27E214FE2A8AFB8E00E66805 /* Response */,
+				27E214FC2A8AF4F700E66805 /* GameModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		27E214FE2A8AFB8E00E66805 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				27E214FF2A8AFBA400E66805 /* ListGameResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +243,7 @@
 				27E214CF2A8A698900E66805 /* ViewController.swift in Sources */,
 				27E214F22A8A783A00E66805 /* GameRemoteDataSourceProtocol.swift in Sources */,
 				27E214F02A8A782600E66805 /* GameRemoteDataSource.swift in Sources */,
+				27E214FD2A8AF4F700E66805 /* GameModel.swift in Sources */,
 				27E214CB2A8A698900E66805 /* AppDelegate.swift in Sources */,
 				27E214F52A8A7B9600E66805 /* GameRepository.swift in Sources */,
 				27E214E02A8A6C9500E66805 /* NetworkConfig.swift in Sources */,
@@ -228,6 +251,7 @@
 				27E214EC2A8A769B00E66805 /* AppError.swift in Sources */,
 				27E214E72A8A710300E66805 /* GameEndpoint.swift in Sources */,
 				27E214CD2A8A698900E66805 /* SceneDelegate.swift in Sources */,
+				27E215002A8AFBA400E66805 /* ListGameResponse.swift in Sources */,
 				27E214E92A8A759200E66805 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

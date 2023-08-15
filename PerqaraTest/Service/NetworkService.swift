@@ -15,9 +15,8 @@ final class NetworkService {
             throw AppError.server(code: nil)
         }
         
-        if let parameters = endpoint.parameters {
+        if let parameters = endpoint.queryParameter {
             let queryItems = parameters
-                .queryParameter()
                 .map { URLQueryItem(name: $0.key, value: $0.value) }
             urlComponent.queryItems = queryItems
         }
@@ -34,5 +33,41 @@ final class NetworkService {
         }
         
         return urlRequest
+    }
+    
+    func request<T: Decodable>(endpoint: NetworkEndpointProtocol,
+                               type: T.Type,
+                               completion: @escaping (Result<T, Error>) -> Void) {
+        var request: URLRequest?
+        
+        do {
+            request = try getRequest(endpoint: endpoint)
+        } catch {
+            completion(.failure(error))
+        }
+        
+        guard let request else { return }
+        
+        let task = URLSession
+            .shared
+            .dataTask(with: request) { data, response, error in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                
+                if let data = data {
+                    do {
+                        let decoder: JSONDecoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        let object = try decoder.decode(type, from: data)
+                        completion(.success(object))
+                    } catch let error {
+                        completion(.failure(error))
+                    }
+                }
+            }
+         
+        task.resume()
     }
 }

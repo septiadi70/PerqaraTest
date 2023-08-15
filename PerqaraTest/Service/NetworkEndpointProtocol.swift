@@ -12,9 +12,5 @@ protocol NetworkEndpointProtocol {
     var path: String { get }
     var headers: [String: String] { get }
     var method: String { get }
-    var parameters: NetworkEndpointParameterProtocol? { get }
-}
-
-protocol NetworkEndpointParameterProtocol {
-    func queryParameter() -> [String: String]
+    var queryParameter: [String: String]? { get }
 }

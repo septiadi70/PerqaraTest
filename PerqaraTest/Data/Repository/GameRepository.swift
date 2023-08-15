@@ -6,11 +6,18 @@
 //
 
 import Foundation
+import Combine
 
 final class GameRepository: GameRepositoryProtocol {
     private let remote: GameRemoteDataSourceProtocol
     
     init(remote: GameRemoteDataSourceProtocol) {
         self.remote = remote
+    }
+    
+    func getRemoteListGames(page: Int?,
+                            pageSize: Int?,
+                            search: String?) -> AnyPublisher<ListGameResponse, Error> {
+        remote.getListGames(page: page, pageSize: pageSize, search: search)
     }
 }

@@ -8,6 +8,8 @@
 import Foundation
 
 enum GameEndpoint: NetworkEndpointProtocol {
+    case list(page: Int?, pageSize: Int?, search: String?)
+    
     var baseURL: String {
         "https://api.rawg.io/api"
     }
@@ -22,5 +24,16 @@ enum GameEndpoint: NetworkEndpointProtocol {
     
     var method: String { "GET" }
     
-    var parameters: NetworkEndpointParameterProtocol? { nil }
+    var queryParameter: [String : String]? {
+        var params: [String: String] = ["key": NetworkConfig.apiKey]
+        
+        switch self {
+        case .list(let page, let pageSize, let search):
+            if let page { params["page"] = String(page) }
+            if let pageSize { params["page_size"] = String(pageSize) }
+            if let search { params["search"] = search }
+        }
+        
+        return params
+    }
 }

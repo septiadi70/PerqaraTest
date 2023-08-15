@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import Combine
 
 protocol GameRepositoryProtocol {
-    
+    func getRemoteListGames(page: Int?,
+                            pageSize: Int?,
+                            search: String?) -> AnyPublisher<ListGameResponse, Error>
 }
