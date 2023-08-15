@@ -34,6 +34,9 @@
 		27E215152A8B343B00E66805 /* ListFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E215132A8B343B00E66805 /* ListFavoritesViewController.swift */; };
 		27E215162A8B343B00E66805 /* ListFavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27E215142A8B343B00E66805 /* ListFavoritesViewController.xib */; };
 		27E215192A8B348E00E66805 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E215182A8B348E00E66805 /* UIColorExt.swift */; };
+		27E2151B2A8B3F2E00E66805 /* ListGamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2151A2A8B3F2E00E66805 /* ListGamesViewModel.swift */; };
+		27E215212A8B467D00E66805 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2151F2A8B467D00E66805 /* GameTableViewCell.swift */; };
+		27E215222A8B467D00E66805 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27E215202A8B467D00E66805 /* GameTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,9 @@
 		27E215132A8B343B00E66805 /* ListFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFavoritesViewController.swift; sourceTree = "<group>"; };
 		27E215142A8B343B00E66805 /* ListFavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFavoritesViewController.xib; sourceTree = "<group>"; };
 		27E215182A8B348E00E66805 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
+		27E2151A2A8B3F2E00E66805 /* ListGamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGamesViewModel.swift; sourceTree = "<group>"; };
+		27E2151F2A8B467D00E66805 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
+		27E215202A8B467D00E66805 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,7 @@
 		27E215092A8B32D800E66805 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				27E2151C2A8B461400E66805 /* SubViews */,
 				27E215122A8B342700E66805 /* ListFavorites */,
 				27E2150D2A8B33D500E66805 /* ListGames */,
 				27E2150A2A8B32EB00E66805 /* Tab */,
@@ -229,6 +236,7 @@
 			children = (
 				27E2150E2A8B33F500E66805 /* ListGamesViewController.swift */,
 				27E2150F2A8B33F500E66805 /* ListGamesViewController.xib */,
+				27E2151A2A8B3F2E00E66805 /* ListGamesViewModel.swift */,
 			);
 			path = ListGames;
 			sourceTree = "<group>";
@@ -248,6 +256,15 @@
 				27E215182A8B348E00E66805 /* UIColorExt.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		27E2151C2A8B461400E66805 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				27E2151F2A8B467D00E66805 /* GameTableViewCell.swift */,
+				27E215202A8B467D00E66805 /* GameTableViewCell.xib */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +330,7 @@
 				27E214D72A8A698A00E66805 /* LaunchScreen.storyboard in Resources */,
 				27E214D42A8A698A00E66805 /* Assets.xcassets in Resources */,
 				27E214D22A8A698900E66805 /* Main.storyboard in Resources */,
+				27E215222A8B467D00E66805 /* GameTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +346,7 @@
 				27E214E22A8A6E2700E66805 /* NetworkEndpointProtocol.swift in Sources */,
 				27E214CF2A8A698900E66805 /* ViewController.swift in Sources */,
 				27E214F22A8A783A00E66805 /* GameRemoteDataSourceProtocol.swift in Sources */,
+				27E2151B2A8B3F2E00E66805 /* ListGamesViewModel.swift in Sources */,
 				27E214F02A8A782600E66805 /* GameRemoteDataSource.swift in Sources */,
 				27E214FD2A8AF4F700E66805 /* GameModel.swift in Sources */,
 				27E214CB2A8A698900E66805 /* AppDelegate.swift in Sources */,
@@ -345,6 +364,7 @@
 				27E215192A8B348E00E66805 /* UIColorExt.swift in Sources */,
 				27E214E92A8A759200E66805 /* NetworkService.swift in Sources */,
 				27E2150C2A8B330700E66805 /* TabViewController.swift in Sources */,
+				27E215212A8B467D00E66805 /* GameTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
