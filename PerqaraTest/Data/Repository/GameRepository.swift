@@ -20,4 +20,8 @@ final class GameRepository: GameRepositoryProtocol {
                             search: String?) -> AnyPublisher<ListGameResponse, Error> {
         remote.getListGames(page: page, pageSize: pageSize, search: search)
     }
+    
+    func getRemoteDetailGame(id: Int) -> AnyPublisher<GameModel, Error> {
+        remote.getDetailGame(id: id)
+    }
 }

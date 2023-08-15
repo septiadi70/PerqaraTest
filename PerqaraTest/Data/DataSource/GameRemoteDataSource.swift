@@ -31,4 +31,19 @@ final class GameRemoteDataSource: GameRemoteDataSourceProtocol {
         }
         .eraseToAnyPublisher()
     }
+    
+    func getDetailGame(id: Int) -> AnyPublisher<GameModel, Error> {
+        Future<GameModel, Error> { [weak self] completion in
+            guard let ws = self else { return }
+            let endpoint = GameEndpoint.detail(id: id)
+            ws.networkService.request(endpoint: endpoint,
+                                      type: GameModel.self) { result in
+                switch result {
+                case .success(let response): completion(.success(response))
+                case .failure(let error): completion(.failure(error))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
 }
