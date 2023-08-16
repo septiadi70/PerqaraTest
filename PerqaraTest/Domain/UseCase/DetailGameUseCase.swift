@@ -10,6 +10,7 @@ import Combine
 
 protocol DetailGameUseCaseProtocol {
     func getDetailGame(id: Int) -> AnyPublisher<GameModel, Error>
+    func saveGameModel(model: GameModel) throws
 }
 
 final class DetailGameUseCase: DetailGameUseCaseProtocol {
@@ -21,5 +22,9 @@ final class DetailGameUseCase: DetailGameUseCaseProtocol {
     
     func getDetailGame(id: Int) -> AnyPublisher<GameModel, Error> {
         repository.getRemoteDetailGame(id: id)
+    }
+    
+    func saveGameModel(model: GameModel) throws {
+        try repository.saveGameModel(model: model)
     }
 }

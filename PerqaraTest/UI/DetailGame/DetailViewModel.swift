@@ -69,4 +69,14 @@ final class DetailViewModel {
     func getDescription() -> String {
         gameModel?.descriptionRaw ?? ""
     }
+    
+    func saveGameModel() {
+        guard let gameModel else { return }
+        do {
+            try useCase.saveGameModel(model: gameModel)
+            print("SAVED")
+        } catch {
+            print(error)
+        }
+    }
 }

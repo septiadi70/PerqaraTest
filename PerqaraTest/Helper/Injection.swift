@@ -12,9 +12,14 @@ final class Injection {
         GameRemoteDataSource(networkService: NetworkService())
     }
     
+    private static func provideGameLocalDataSource() -> GameLocalDataSourceProtocol {
+        GameLocalDataSource(persistenceController: PersistenceController.shared)
+    }
+    
     private static func provideGameRepository() -> GameRepositoryProtocol {
         let remote = Injection.provideGameRemoteDataSource()
-        return GameRepository(remote: remote)
+        let local = Injection.provideGameLocalDataSource()
+        return GameRepository(remote: remote, local: local)
     }
     
     static func provideListGamesViewController() -> ListGamesViewController {

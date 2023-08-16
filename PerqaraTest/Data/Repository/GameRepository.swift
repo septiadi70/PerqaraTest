@@ -10,9 +10,11 @@ import Combine
 
 final class GameRepository: GameRepositoryProtocol {
     private let remote: GameRemoteDataSourceProtocol
+    private let local: GameLocalDataSourceProtocol
     
-    init(remote: GameRemoteDataSourceProtocol) {
+    init(remote: GameRemoteDataSourceProtocol, local: GameLocalDataSourceProtocol) {
         self.remote = remote
+        self.local = local
     }
     
     func getRemoteListGames(page: Int?,
@@ -23,5 +25,9 @@ final class GameRepository: GameRepositoryProtocol {
     
     func getRemoteDetailGame(id: Int) -> AnyPublisher<GameModel, Error> {
         remote.getDetailGame(id: id)
+    }
+    
+    func saveGameModel(model: GameModel) throws {
+        try local.saveProduct(gameModel: model)
     }
 }

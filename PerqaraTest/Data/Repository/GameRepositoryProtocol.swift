@@ -13,4 +13,5 @@ protocol GameRepositoryProtocol {
                             pageSize: Int?,
                             search: String?) -> AnyPublisher<ListGameResponse, Error>
     func getRemoteDetailGame(id: Int) -> AnyPublisher<GameModel, Error>
+    func saveGameModel(model: GameModel) throws
 }
