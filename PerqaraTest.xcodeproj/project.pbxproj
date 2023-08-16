@@ -19,6 +19,8 @@
 		277979CD2A8CACA7009F9EEB /* GameLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979CC2A8CACA7009F9EEB /* GameLocalDataSource.swift */; };
 		277979D02A8CADAD009F9EEB /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979CF2A8CADAD009F9EEB /* PersistenceController.swift */; };
 		277979D32A8CBA62009F9EEB /* GameModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979D22A8CBA62009F9EEB /* GameModelMapper.swift */; };
+		277979D52A8CF6FC009F9EEB /* ListFavoritesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979D42A8CF6FC009F9EEB /* ListFavoritesUseCase.swift */; };
+		277979D72A8CF827009F9EEB /* ListFavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979D62A8CF827009F9EEB /* ListFavoritesViewModel.swift */; };
 		27E214CB2A8A698900E66805 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214CA2A8A698900E66805 /* AppDelegate.swift */; };
 		27E214CD2A8A698900E66805 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214CC2A8A698900E66805 /* SceneDelegate.swift */; };
 		27E214CF2A8A698900E66805 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214CE2A8A698900E66805 /* ViewController.swift */; };
@@ -63,6 +65,8 @@
 		277979CC2A8CACA7009F9EEB /* GameLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLocalDataSource.swift; sourceTree = "<group>"; };
 		277979CF2A8CADAD009F9EEB /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		277979D22A8CBA62009F9EEB /* GameModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelMapper.swift; sourceTree = "<group>"; };
+		277979D42A8CF6FC009F9EEB /* ListFavoritesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFavoritesUseCase.swift; sourceTree = "<group>"; };
+		277979D62A8CF827009F9EEB /* ListFavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFavoritesViewModel.swift; sourceTree = "<group>"; };
 		27E214C72A8A698900E66805 /* PerqaraTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerqaraTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E214CA2A8A698900E66805 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27E214CC2A8A698900E66805 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -269,6 +273,7 @@
 			children = (
 				27E215072A8B318400E66805 /* ListGamesUseCase.swift */,
 				277979C32A8C66ED009F9EEB /* DetailGameUseCase.swift */,
+				277979D42A8CF6FC009F9EEB /* ListFavoritesUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 			children = (
 				27E215132A8B343B00E66805 /* ListFavoritesViewController.swift */,
 				27E215142A8B343B00E66805 /* ListFavoritesViewController.xib */,
+				277979D62A8CF827009F9EEB /* ListFavoritesViewModel.swift */,
 			);
 			path = ListFavorites;
 			sourceTree = "<group>";
@@ -425,6 +431,7 @@
 				27E214FD2A8AF4F700E66805 /* GameModel.swift in Sources */,
 				277979D02A8CADAD009F9EEB /* PersistenceController.swift in Sources */,
 				277979BD2A8B8799009F9EEB /* LoveButton.swift in Sources */,
+				277979D72A8CF827009F9EEB /* ListFavoritesViewModel.swift in Sources */,
 				27E214CB2A8A698900E66805 /* AppDelegate.swift in Sources */,
 				27E215152A8B343B00E66805 /* ListFavoritesViewController.swift in Sources */,
 				27E214F52A8A7B9600E66805 /* GameRepository.swift in Sources */,
@@ -438,6 +445,7 @@
 				27E215032A8B244500E66805 /* PublisherModel.swift in Sources */,
 				277979C92A8CA6E7009F9EEB /* Game.xcdatamodeld in Sources */,
 				27E215192A8B348E00E66805 /* UIColorExt.swift in Sources */,
+				277979D52A8CF6FC009F9EEB /* ListFavoritesUseCase.swift in Sources */,
 				27E214E92A8A759200E66805 /* NetworkService.swift in Sources */,
 				27E2150C2A8B330700E66805 /* TabViewController.swift in Sources */,
 				27E215212A8B467D00E66805 /* GameTableViewCell.swift in Sources */,

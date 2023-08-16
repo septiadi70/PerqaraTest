@@ -33,4 +33,10 @@ final class Injection {
         let viewModel = DetailViewModel(useCase: useCase, gameId: gameId)
         return DetailViewController(viewModel: viewModel)
     }
+    
+    static func provideListFavoriteViewController() -> ListFavoritesViewController {
+        let useCase = ListFavoritesUseCase(repository: provideGameRepository())
+        let viewModel = ListFavoritesViewModel(useCase: useCase)
+        return ListFavoritesViewController(viewModel: viewModel)
+    }
 }

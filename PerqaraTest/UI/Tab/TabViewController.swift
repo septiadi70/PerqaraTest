@@ -17,7 +17,7 @@ class TabViewController: UITabBarController {
     }()
     
     lazy var listFavoritesNavController: UINavigationController = {
-        let listFavoritesViewController = ListFavoritesViewController()
+        let listFavoritesViewController = Injection.provideListFavoriteViewController()
         let navController = UINavigationController(rootViewController: listFavoritesViewController)
         navController.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(systemName: "heart"), tag: 0)
         return navController

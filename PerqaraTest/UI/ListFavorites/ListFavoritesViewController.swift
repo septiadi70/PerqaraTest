@@ -8,11 +8,21 @@
 import UIKit
 
 class ListFavoritesViewController: UIViewController {
+    private var viewModel: ListFavoritesViewModel
     
     @IBOutlet weak var tableView: UITableView!
     
     struct K {
         static let cellId = "CellId"
+    }
+    
+    init(viewModel: ListFavoritesViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: "ListFavoritesViewController", bundle: Bundle(for: Self.self))
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
