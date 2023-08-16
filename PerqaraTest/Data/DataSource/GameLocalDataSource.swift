@@ -21,4 +21,19 @@ final class GameLocalDataSource: GameLocalDataSourceProtocol {
         let _ = GameModelMapper.mapModelToEntity(model: model, moc: moc)
         try moc.save()
     }
+    
+    func getGameEntity(gameId: Int) -> AnyPublisher<GameEntity?, Error> {
+        Future<GameEntity?, Error> { [weak self] completion in
+            guard let ws = self else { return }
+            let fetchRequest = NSFetchRequest<GameEntity>(entityName: "GameEntity")
+            fetchRequest.predicate = NSPredicate(format: "id == %i", gameId)
+            do {
+                let gameEntity = try ws.persistenceController.viewContext.fetch(fetchRequest).first
+                completion(.success(gameEntity))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+        .eraseToAnyPublisher()
+    }
 }

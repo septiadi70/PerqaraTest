@@ -22,4 +22,16 @@ final class GameModelMapper {
         game.descriptionRaw = model.descriptionRaw
         return game
     }
+    
+    static func mapEntityToModel(entity: GameEntity) -> GameModel {
+        GameModel(id: Int(entity.id),
+                  slug: entity.slug ?? "",
+                  name: entity.name ?? "",
+                  released: entity.released,
+                  backgroundImage: entity.backgroundImage,
+                  rating: entity.rating,
+                  publishers: [],
+                  added: Int(entity.added),
+                  descriptionRaw: entity.descriptionRaw)
+    }
 }

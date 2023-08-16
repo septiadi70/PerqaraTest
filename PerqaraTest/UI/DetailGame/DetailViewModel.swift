@@ -12,6 +12,7 @@ final class DetailViewModel {
     private let useCase: DetailGameUseCaseProtocol
     private let gameId: Int
     private var bags = Set<AnyCancellable>()
+    private var localGameModel: GameModel?
     
     @Published var isLoading = false
     @Published var gameModel: GameModel?
@@ -23,7 +24,11 @@ final class DetailViewModel {
     
     func loadDetail() {
         useCase
-            .getDetailGame(id: gameId)
+            .getLocalGame(id: gameId)
+            .flatMap { gameModel in
+                self.localGameModel = gameModel
+                return self.useCase.getDetailGame(id: self.gameId)
+            }
             .subscribe(on: DispatchQueue.global(qos: .background))
             .receive(on: RunLoop.main)
             .sink { [weak self] completion in

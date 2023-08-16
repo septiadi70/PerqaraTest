@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import CoreData
 
 final class GameRepository: GameRepositoryProtocol {
     private let remote: GameRemoteDataSourceProtocol
@@ -29,5 +30,13 @@ final class GameRepository: GameRepositoryProtocol {
     
     func saveGameModel(model: GameModel) throws {
         try local.saveProduct(gameModel: model)
+    }
+    
+    func getLocalGame(gameId: Int) -> AnyPublisher<GameModel?, Error> {
+        local.getGameEntity(gameId: gameId)
+            .map { entity in
+                guard let entity else { return nil }
+                return GameModelMapper.mapEntityToModel(entity: entity)
+            }.eraseToAnyPublisher()
     }
 }

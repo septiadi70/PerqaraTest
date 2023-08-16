@@ -11,4 +11,5 @@ import Combine
 
 protocol GameLocalDataSourceProtocol {
     func saveProduct(gameModel model: GameModel) throws
+    func getGameEntity(gameId: Int) -> AnyPublisher<GameEntity?, Error>
 }
