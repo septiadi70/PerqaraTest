@@ -22,4 +22,10 @@ final class Injection {
         let viewModel = ListGamesViewModel(useCase: useCase)
         return ListGamesViewController(viewModel: viewModel)
     }
+    
+    static func provideDetailGameViewController(gameId: Int) -> DetailViewController {
+        let useCase = DetailGameUseCase(repository: provideGameRepository())
+        let viewModel = DetailViewModel(useCase: useCase, gameId: gameId)
+        return DetailViewController(viewModel: viewModel)
+    }
 }

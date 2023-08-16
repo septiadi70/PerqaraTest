@@ -6,11 +6,21 @@
 //
 
 import UIKit
+import Combine
 
 class DetailViewController: UIViewController {
+    private var viewModel: DetailViewModel
+    private var bags = Set<AnyCancellable>()
     
+    @IBOutlet weak var gameImageView: UIImageView!
+    @IBOutlet weak var publisherLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var releaseLabel: UILabel!
     @IBOutlet weak var starImageView: UIImageView!
+    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var controllerImageView: UIImageView!
+    @IBOutlet weak var playedCountLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     lazy var backBarButtonItem: UIBarButtonItem = {
         let item = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"),
@@ -31,6 +41,15 @@ class DetailViewController: UIViewController {
         let item = UIBarButtonItem(customView: loveButton)
         return item
     }()
+    
+    init(viewModel: DetailViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: "DetailViewController", bundle: Bundle(for: Self.self))
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +62,39 @@ class DetailViewController: UIViewController {
         
         controllerImageView.tintColor = UIColor(named: "MainBlueTint")
         controllerImageView.image = UIImage(systemName: "gamecontroller")
+        
+        configBinding()
+        viewModel.loadDetail()
     }
 
+}
+
+// MARK: - Helpers
+
+extension DetailViewController {
+    private func reloadViews() {
+        gameImageView.image = nil
+        if let imageURL = viewModel.getBackgroundImageURL() {
+            gameImageView.load(url: imageURL)
+        }
+        
+        publisherLabel.text = viewModel.getPublishersName()
+        nameLabel.text = viewModel.getName()
+        releaseLabel.text = "Release Date \(viewModel.getReleased())"
+        ratingLabel.text = String(viewModel.getRating())
+        playedCountLabel.text = "\(viewModel.getPlayedCount()) played"
+        descriptionLabel.text = viewModel.getDescription()
+    }
+    
+    private func configBinding() {
+        viewModel
+            .$gameModel
+            .receive(on: RunLoop.main)
+            .sink { [weak self] _ in
+                self?.reloadViews()
+            }
+            .store(in: &bags)
+    }
 }
 
 extension DetailViewController {

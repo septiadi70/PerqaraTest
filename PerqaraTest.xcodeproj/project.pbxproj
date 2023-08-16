@@ -12,6 +12,8 @@
 		277979BD2A8B8799009F9EEB /* LoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979BC2A8B8799009F9EEB /* LoveButton.swift */; };
 		277979C02A8C5A73009F9EEB /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979BF2A8C5A73009F9EEB /* GameViewModel.swift */; };
 		277979C22A8C63FA009F9EEB /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979C12A8C63FA009F9EEB /* UIImageViewExt.swift */; };
+		277979C42A8C66ED009F9EEB /* DetailGameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979C32A8C66ED009F9EEB /* DetailGameUseCase.swift */; };
+		277979C62A8C66FB009F9EEB /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979C52A8C66FB009F9EEB /* DetailViewModel.swift */; };
 		27E214CB2A8A698900E66805 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214CA2A8A698900E66805 /* AppDelegate.swift */; };
 		27E214CD2A8A698900E66805 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214CC2A8A698900E66805 /* SceneDelegate.swift */; };
 		27E214CF2A8A698900E66805 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214CE2A8A698900E66805 /* ViewController.swift */; };
@@ -49,6 +51,8 @@
 		277979BC2A8B8799009F9EEB /* LoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveButton.swift; sourceTree = "<group>"; };
 		277979BF2A8C5A73009F9EEB /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		277979C12A8C63FA009F9EEB /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
+		277979C32A8C66ED009F9EEB /* DetailGameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameUseCase.swift; sourceTree = "<group>"; };
+		277979C52A8C66FB009F9EEB /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		27E214C72A8A698900E66805 /* PerqaraTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerqaraTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E214CA2A8A698900E66805 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27E214CC2A8A698900E66805 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 			children = (
 				277979B62A8B8381009F9EEB /* DetailViewController.swift */,
 				277979B72A8B8381009F9EEB /* DetailViewController.xib */,
+				277979C52A8C66FB009F9EEB /* DetailViewModel.swift */,
 			);
 			path = DetailGame;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				27E215072A8B318400E66805 /* ListGamesUseCase.swift */,
+				277979C32A8C66ED009F9EEB /* DetailGameUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -372,8 +378,10 @@
 			files = (
 				27E215102A8B33F500E66805 /* ListGamesViewController.swift in Sources */,
 				277979C22A8C63FA009F9EEB /* UIImageViewExt.swift in Sources */,
+				277979C62A8C66FB009F9EEB /* DetailViewModel.swift in Sources */,
 				27E214FA2A8A7D2200E66805 /* Injection.swift in Sources */,
 				277979B82A8B8381009F9EEB /* DetailViewController.swift in Sources */,
+				277979C42A8C66ED009F9EEB /* DetailGameUseCase.swift in Sources */,
 				27E214E22A8A6E2700E66805 /* NetworkEndpointProtocol.swift in Sources */,
 				27E214CF2A8A698900E66805 /* ViewController.swift in Sources */,
 				27E214F22A8A783A00E66805 /* GameRemoteDataSourceProtocol.swift in Sources */,

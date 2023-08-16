@@ -11,6 +11,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="PerqaraTest" customModuleProvider="target">
             <connections>
                 <outlet property="controllerImageView" destination="ujb-IA-kqm" id="9po-GM-HaK"/>
+                <outlet property="descriptionLabel" destination="3FK-6d-VOM" id="CnK-1G-Xb4"/>
+                <outlet property="gameImageView" destination="yrw-so-hSB" id="n6Q-er-NQO"/>
+                <outlet property="nameLabel" destination="u4W-6u-bfh" id="kFT-U9-q10"/>
+                <outlet property="playedCountLabel" destination="CI3-rF-c7S" id="go8-0Q-IGi"/>
+                <outlet property="publisherLabel" destination="1VW-uP-VoU" id="Sna-0Y-qSU"/>
+                <outlet property="ratingLabel" destination="XxS-Ia-hhW" id="2JS-im-fNu"/>
+                <outlet property="releaseLabel" destination="73F-rx-90R" id="U7d-jh-QEt"/>
                 <outlet property="starImageView" destination="b1p-oQ-Cvn" id="2gR-yn-G38"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

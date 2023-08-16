@@ -126,9 +126,12 @@ extension ListGamesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let detailViewController = DetailViewController()
-        detailViewController.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(detailViewController, animated: true)
+        
+        if let game = viewModel.getGame(index: indexPath.row) {
+            let detailViewController = Injection.provideDetailGameViewController(gameId: game.id)
+            detailViewController.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(detailViewController, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
