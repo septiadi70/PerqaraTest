@@ -12,8 +12,14 @@ final class Injection {
         GameRemoteDataSource(networkService: NetworkService())
     }
     
-    static func provideGameRepository() -> GameRepositoryProtocol {
+    private static func provideGameRepository() -> GameRepositoryProtocol {
         let remote = Injection.provideGameRemoteDataSource()
         return GameRepository(remote: remote)
+    }
+    
+    static func provideListGamesViewController() -> ListGamesViewController {
+        let useCase = ListGamesUseCase(repository: provideGameRepository())
+        let viewModel = ListGamesViewModel(useCase: useCase)
+        return ListGamesViewController(viewModel: viewModel)
     }
 }

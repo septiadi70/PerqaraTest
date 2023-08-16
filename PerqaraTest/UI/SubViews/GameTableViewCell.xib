@@ -19,7 +19,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ASQ-Y7-fPG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XJD-ls-ZPO">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XJD-ls-ZPO">
                                 <rect key="frame" x="8" y="8" width="120" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="FWD-gS-NaX"/>
@@ -88,6 +88,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="gameImageView" destination="XJD-ls-ZPO" id="XBS-md-v93"/>
+                <outlet property="nameLabel" destination="GSY-eH-73i" id="YDJ-Li-TNd"/>
+                <outlet property="ratingLabel" destination="MbV-D4-ZoU" id="I2r-h0-FDE"/>
+                <outlet property="releaseLabel" destination="7NU-io-RzM" id="2Bl-ED-ggB"/>
                 <outlet property="starImageView" destination="jRJ-GB-Q1j" id="uPW-oQ-xuh"/>
             </connections>
             <point key="canvasLocation" x="129.7709923664122" y="11.971830985915494"/>

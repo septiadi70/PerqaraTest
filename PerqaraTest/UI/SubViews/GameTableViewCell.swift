@@ -10,6 +10,9 @@ import UIKit
 class GameTableViewCell: UITableViewCell {
     
     @IBOutlet weak var gameImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var releaseLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var starImageView: UIImageView!
 
     static func nib() -> UINib {
@@ -30,6 +33,17 @@ class GameTableViewCell: UITableViewCell {
         
         starImageView.tintColor = .orange
         starImageView.image = UIImage(systemName: "star.fill")
+    }
+    
+    func config(viewModel: GameViewModel) {
+        nameLabel.text = viewModel.getName()
+        releaseLabel.text = "Release Date \(viewModel.getReleased())"
+        ratingLabel.text = String(viewModel.getRating())
+        
+        gameImageView.image = nil
+        if let imageURL = viewModel.getBackgroundImageURL() {
+            gameImageView.load(url: imageURL)
+        }
     }
     
 }

@@ -15,6 +15,6 @@ struct GameModel: Decodable {
     var backgroundImage: String?
     var rating: Double?
     var publishers: [PublisherModel]?
-    var addedByStatus: GameAddedStatusModel?
+    var added: Int?
     var descriptionRaw: String?
 }

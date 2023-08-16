@@ -10,7 +10,7 @@ import UIKit
 class TabViewController: UITabBarController {
     
     lazy var listGamesNavController: UINavigationController = {
-        let listGamesViewController = ListGamesViewController()
+        let listGamesViewController = Injection.provideListGamesViewController()
         let navController = UINavigationController(rootViewController: listGamesViewController)
         navController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
         return navController
