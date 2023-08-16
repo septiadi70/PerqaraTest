@@ -12,10 +12,10 @@ final class DetailViewModel {
     private let useCase: DetailGameUseCaseProtocol
     private let gameId: Int
     private var bags = Set<AnyCancellable>()
-    private var localGameModel: GameModel?
     
     @Published var isLoading = false
     @Published var gameModel: GameModel?
+    @Published var localGameModel: GameModel?
     
     init(useCase: DetailGameUseCaseProtocol, gameId: Int) {
         self.useCase = useCase
@@ -75,11 +75,19 @@ final class DetailViewModel {
         gameModel?.descriptionRaw ?? ""
     }
     
+    func favoriteGame() {
+        if localGameModel == nil {
+            saveGameModel()
+        } else {
+            removeGameModel()
+        }
+    }
+    
     func saveGameModel() {
         guard let gameModel else { return }
         do {
             try useCase.saveGameModel(model: gameModel)
-            print("SAVED")
+            localGameModel = gameModel
         } catch {
             print(error)
         }
@@ -89,7 +97,7 @@ final class DetailViewModel {
         guard let gameModel else { return }
         do {
             try useCase.removeGameEntity(gameModel: gameModel)
-            print("REMOVED")
+            localGameModel = nil
         } catch {
             print(error)
         }

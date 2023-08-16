@@ -94,6 +94,14 @@ extension DetailViewController {
                 self?.reloadViews()
             }
             .store(in: &bags)
+        
+        viewModel
+            .$localGameModel
+            .receive(on: RunLoop.main)
+            .sink { [ weak self] model in
+                self?.loveButton.isOn = model != nil
+            }
+            .store(in: &bags)
     }
 }
 
@@ -103,6 +111,6 @@ extension DetailViewController {
     }
     
     @objc func loveButtonTapped(_ sender: UIButton) {
-        viewModel.removeGameModel()
+        viewModel.favoriteGame()
     }
 }
