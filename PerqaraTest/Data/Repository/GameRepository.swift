@@ -32,6 +32,10 @@ final class GameRepository: GameRepositoryProtocol {
         try local.saveProduct(gameModel: model)
     }
     
+    func removeGameEntity(gameModel: GameModel) throws {
+        try local.removeGameEntity(gameModel: gameModel)
+    }
+    
     func getLocalGame(gameId: Int) -> AnyPublisher<GameModel?, Error> {
         local.getGameEntity(gameId: gameId)
             .map { entity in

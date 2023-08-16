@@ -84,4 +84,14 @@ final class DetailViewModel {
             print(error)
         }
     }
+    
+    func removeGameModel() {
+        guard let gameModel else { return }
+        do {
+            try useCase.removeGameEntity(gameModel: gameModel)
+            print("REMOVED")
+        } catch {
+            print(error)
+        }
+    }
 }

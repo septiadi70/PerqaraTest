@@ -103,6 +103,6 @@ extension DetailViewController {
     }
     
     @objc func loveButtonTapped(_ sender: UIButton) {
-        viewModel.saveGameModel()
+        viewModel.removeGameModel()
     }
 }

@@ -22,6 +22,14 @@ final class GameLocalDataSource: GameLocalDataSourceProtocol {
         try moc.save()
     }
     
+    func removeGameEntity(gameModel: GameModel) throws {
+        let fetchRequest = NSFetchRequest<GameEntity>(entityName: "GameEntity")
+        fetchRequest.predicate = NSPredicate(format: "id == %i", gameModel.id)
+        guard let gameEntity = try persistenceController.viewContext.fetch(fetchRequest).first
+        else { throw AppError.custom(message: "Delete entity failed") }
+        try persistenceController.delete(gameEntity)
+    }
+    
     func getGameEntity(gameId: Int) -> AnyPublisher<GameEntity?, Error> {
         Future<GameEntity?, Error> { [weak self] completion in
             guard let ws = self else { return }
