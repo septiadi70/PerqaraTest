@@ -97,6 +97,17 @@ extension ListGamesViewController {
                 ws.viewModel.loadGames()
             }
             .store(in: &bags)
+        
+        viewModel
+            .$error
+            .receive(on: RunLoop.main)
+            .sink { [weak self] error in
+                guard let ws = self, let error else { return }
+                Alert
+                    .basicAlert(title: "Error", message: error.localizedDescription)
+                    .present(at: ws)
+            }
+            .store(in: &bags)
     }
 }
 

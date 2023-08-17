@@ -16,6 +16,7 @@ final class ListGamesViewModel {
     @Published var isLoading = false
     @Published var search: String?
     @Published var games = [GameModel]()
+    @Published var error: Error?
     
     init(useCase: ListGamesUseCaseProtocol) {
         self.useCase = useCase
@@ -40,7 +41,7 @@ final class ListGamesViewModel {
                 self?.isLoading = false
                 
                 switch completion {
-                case .failure(let err): print(err)
+                case .failure(let err): self?.error = err
                 case .finished: break
                 }
             } receiveValue: { [weak self] output in
