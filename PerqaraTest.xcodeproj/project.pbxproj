@@ -21,6 +21,7 @@
 		277979D32A8CBA62009F9EEB /* GameModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979D22A8CBA62009F9EEB /* GameModelMapper.swift */; };
 		277979D52A8CF6FC009F9EEB /* ListFavoritesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979D42A8CF6FC009F9EEB /* ListFavoritesUseCase.swift */; };
 		277979D72A8CF827009F9EEB /* ListFavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979D62A8CF827009F9EEB /* ListFavoritesViewModel.swift */; };
+		2785FBE12A8D9EE90012A638 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2785FBE02A8D9EE90012A638 /* Alert.swift */; };
 		27E214CB2A8A698900E66805 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214CA2A8A698900E66805 /* AppDelegate.swift */; };
 		27E214CD2A8A698900E66805 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214CC2A8A698900E66805 /* SceneDelegate.swift */; };
 		27E214CF2A8A698900E66805 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E214CE2A8A698900E66805 /* ViewController.swift */; };
@@ -67,6 +68,7 @@
 		277979D22A8CBA62009F9EEB /* GameModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelMapper.swift; sourceTree = "<group>"; };
 		277979D42A8CF6FC009F9EEB /* ListFavoritesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFavoritesUseCase.swift; sourceTree = "<group>"; };
 		277979D62A8CF827009F9EEB /* ListFavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFavoritesViewModel.swift; sourceTree = "<group>"; };
+		2785FBE02A8D9EE90012A638 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		27E214C72A8A698900E66805 /* PerqaraTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerqaraTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E214CA2A8A698900E66805 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27E214CC2A8A698900E66805 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				27E215172A8B348200E66805 /* Extension */,
 				27E214EB2A8A769B00E66805 /* AppError.swift */,
 				27E214F92A8A7D2200E66805 /* Injection.swift */,
+				2785FBE02A8D9EE90012A638 /* Alert.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				27E214CB2A8A698900E66805 /* AppDelegate.swift in Sources */,
 				27E215152A8B343B00E66805 /* ListFavoritesViewController.swift in Sources */,
 				27E214F52A8A7B9600E66805 /* GameRepository.swift in Sources */,
+				2785FBE12A8D9EE90012A638 /* Alert.swift in Sources */,
 				27E214E02A8A6C9500E66805 /* NetworkConfig.swift in Sources */,
 				27E214F72A8A7BA300E66805 /* GameRepositoryProtocol.swift in Sources */,
 				27E214EC2A8A769B00E66805 /* AppError.swift in Sources */,
