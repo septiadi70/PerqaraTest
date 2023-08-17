@@ -107,5 +107,11 @@ extension ListFavoritesViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let game = viewModel.getGame(index: indexPath.row) {
+            let detailViewController = Injection.provideDetailGameViewController(gameId: game.id)
+            detailViewController.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(detailViewController, animated: true)
+        }
     }
 }
