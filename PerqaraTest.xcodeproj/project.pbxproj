@@ -12,6 +12,7 @@
 		2778D8592A8DFCF40077C8AA /* ListFavoritesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2778D8582A8DFCF40077C8AA /* ListFavoritesUseCaseTests.swift */; };
 		2778D85B2A8DFE510077C8AA /* ListGamesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2778D85A2A8DFE510077C8AA /* ListGamesViewModelTests.swift */; };
 		2778D85D2A8E03F90077C8AA /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2778D85C2A8E03F90077C8AA /* DetailViewModelTests.swift */; };
+		2778D85F2A8E06BE0077C8AA /* ListFavoritesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2778D85E2A8E06BE0077C8AA /* ListFavoritesViewModelTests.swift */; };
 		277979B82A8B8381009F9EEB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979B62A8B8381009F9EEB /* DetailViewController.swift */; };
 		277979B92A8B8381009F9EEB /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 277979B72A8B8381009F9EEB /* DetailViewController.xib */; };
 		277979BD2A8B8799009F9EEB /* LoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979BC2A8B8799009F9EEB /* LoveButton.swift */; };
@@ -79,6 +80,7 @@
 		2778D8582A8DFCF40077C8AA /* ListFavoritesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFavoritesUseCaseTests.swift; sourceTree = "<group>"; };
 		2778D85A2A8DFE510077C8AA /* ListGamesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGamesViewModelTests.swift; sourceTree = "<group>"; };
 		2778D85C2A8E03F90077C8AA /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
+		2778D85E2A8E06BE0077C8AA /* ListFavoritesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFavoritesViewModelTests.swift; sourceTree = "<group>"; };
 		277979B62A8B8381009F9EEB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		277979B72A8B8381009F9EEB /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		277979BC2A8B8799009F9EEB /* LoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveButton.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				2778D8582A8DFCF40077C8AA /* ListFavoritesUseCaseTests.swift */,
 				2778D85A2A8DFE510077C8AA /* ListGamesViewModelTests.swift */,
 				2778D85C2A8E03F90077C8AA /* DetailViewModelTests.swift */,
+				2778D85E2A8E06BE0077C8AA /* ListFavoritesViewModelTests.swift */,
 			);
 			path = PerqaraTestTests;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				2778D85B2A8DFE510077C8AA /* ListGamesViewModelTests.swift in Sources */,
 				2785FBFD2A8DF1970012A638 /* GameRepositoryTests.swift in Sources */,
 				2785FBF12A8DD0060012A638 /* RemoteDataSourceTests.swift in Sources */,
+				2778D85F2A8E06BE0077C8AA /* ListFavoritesViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
