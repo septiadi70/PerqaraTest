@@ -8,12 +8,18 @@
 import Foundation
 import Combine
 
-protocol ListFavoritesUseCaseProtocol {}
+protocol ListFavoritesUseCaseProtocol {
+    func getGames() -> AnyPublisher<[GameModel], Error>
+}
 
 final class ListFavoritesUseCase: ListFavoritesUseCaseProtocol {
     private let repository: GameRepositoryProtocol
     
     init(repository: GameRepositoryProtocol) {
         self.repository = repository
+    }
+    
+    func getGames() -> AnyPublisher<[GameModel], Error> {
+        repository.getLocalGames()
     }
 }

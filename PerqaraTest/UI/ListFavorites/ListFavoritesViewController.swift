@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Combine
 
 class ListFavoritesViewController: UIViewController {
     private var viewModel: ListFavoritesViewModel
+    private var bags = Set<AnyCancellable>()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -31,6 +33,8 @@ class ListFavoritesViewController: UIViewController {
         navigationItem.title = "Favorite Games"
 
         configTable()
+        configBinding()
+        viewModel.loadGames()
     }
 
 }
@@ -45,18 +49,31 @@ extension ListFavoritesViewController {
         tableView.separatorStyle = .none
         tableView.register(GameTableViewCell.nib(), forCellReuseIdentifier: K.cellId)
     }
+    
+    private func configBinding() {
+        viewModel
+            .$games
+            .receive(on: RunLoop.main)
+            .sink { [weak self] _ in
+                self?.tableView.reloadData()
+            }
+            .store(in: &bags)
+    }
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
 
 extension ListFavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
+        viewModel.games.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let aCell = tableView.dequeueReusableCell(withIdentifier: K.cellId, for: indexPath)
-        guard let cell = aCell as? GameTableViewCell else { return aCell }
+        guard let cell = aCell as? GameTableViewCell,
+              let game = viewModel.getGame(index: indexPath.row)
+        else { return aCell }
+        cell.config(viewModel: GameViewModel(game: game))
         return cell
     }
     

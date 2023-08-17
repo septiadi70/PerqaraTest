@@ -44,4 +44,21 @@ final class GameLocalDataSource: GameLocalDataSourceProtocol {
         }
         .eraseToAnyPublisher()
     }
+    
+    func getGameEntities() -> AnyPublisher<[GameEntity], Error> {
+        Future<[GameEntity], Error> { [weak self] completion in
+            guard let ws = self else { return }
+            let fetchRequest = NSFetchRequest<GameEntity>(entityName: "GameEntity")
+            let sortDescriptors = NSSortDescriptor(key: #keyPath(GameEntity.released),
+                                                   ascending: true)
+            fetchRequest.sortDescriptors = [sortDescriptors]
+            do {
+                let entities = try ws.persistenceController.viewContext.fetch(fetchRequest)
+                completion(.success(entities))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+        .eraseToAnyPublisher()
+    }
 }

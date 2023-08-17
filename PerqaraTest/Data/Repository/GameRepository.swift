@@ -43,4 +43,13 @@ final class GameRepository: GameRepositoryProtocol {
                 return GameModelMapper.mapEntityToModel(entity: entity)
             }.eraseToAnyPublisher()
     }
+    
+    func getLocalGames() -> AnyPublisher<[GameModel], Error> {
+        local
+            .getGameEntities()
+            .map { entities in
+                entities.map { GameModelMapper.mapEntityToModel(entity: $0) }
+            }
+            .eraseToAnyPublisher()
+    }
 }

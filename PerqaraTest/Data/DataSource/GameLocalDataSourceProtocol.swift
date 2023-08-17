@@ -13,4 +13,5 @@ protocol GameLocalDataSourceProtocol {
     func saveProduct(gameModel model: GameModel) throws
     func removeGameEntity(gameModel: GameModel) throws
     func getGameEntity(gameId: Int) -> AnyPublisher<GameEntity?, Error>
+    func getGameEntities() -> AnyPublisher<[GameEntity], Error>
 }

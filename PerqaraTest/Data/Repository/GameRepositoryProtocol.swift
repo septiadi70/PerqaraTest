@@ -16,4 +16,5 @@ protocol GameRepositoryProtocol {
     func saveGameModel(model: GameModel) throws
     func removeGameEntity(gameModel: GameModel) throws
     func getLocalGame(gameId: Int) -> AnyPublisher<GameModel?, Error>
+    func getLocalGames() -> AnyPublisher<[GameModel], Error>
 }
