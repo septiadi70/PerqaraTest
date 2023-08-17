@@ -24,8 +24,8 @@ struct Alert {
         controller.present(alertController, animated: true)
     }
     
-    static func basicAlert(title: String?, message: String?, handler: ((UIAlertAction) -> Void)? = nil) -> Alert {
-        let action = UIAlertAction(title: "OK", style: .default, handler: handler)
+    static func basicAlert(title: String?, message: String?) -> Alert {
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         return Alert(title: title, message: message, actions: [action])
     }
 }

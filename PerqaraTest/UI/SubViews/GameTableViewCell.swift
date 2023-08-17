@@ -19,12 +19,6 @@ class GameTableViewCell: UITableViewCell {
         return UINib(nibName: String(describing: self), bundle: Bundle(for: Self.self))
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        gameImageView.backgroundColor = .lightGray
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -40,6 +34,7 @@ class GameTableViewCell: UITableViewCell {
         releaseLabel.text = "Release Date \(viewModel.getReleased())"
         ratingLabel.text = String(viewModel.getRating())
         
+        gameImageView.backgroundColor = .lightGray
         gameImageView.image = nil
         if let imageURL = viewModel.getBackgroundImageURL() {
             gameImageView.load(url: imageURL)

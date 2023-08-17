@@ -17,8 +17,8 @@ enum GameEndpoint: NetworkEndpointProtocol {
     
     var path: String {
         switch self {
+        case .list: return "/games"
         case .detail(let id): return "/games/\(id)"
-        default: return "/games"
         }
     }
     

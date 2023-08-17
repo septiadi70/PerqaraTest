@@ -14,10 +14,7 @@ class LoveButton: UIButton {
     @IBInspectable var isOn: Bool = false {
         didSet {
             let image = isOn ? onImage : offImage
-            setImage(
-                image,
-                for: .normal
-            )
+            setImage(image, for: .normal)
         }
     }
 }

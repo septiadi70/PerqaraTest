@@ -39,10 +39,8 @@ final class ListGamesViewModel {
             .receive(on: RunLoop.main)
             .sink { [weak self] completion in
                 self?.isLoading = false
-                
-                switch completion {
-                case .failure(let err): self?.error = err
-                case .finished: break
+                if case .failure(let err) = completion {
+                    self?.error = err
                 }
             } receiveValue: { [weak self] output in
                 if let games = output.results {

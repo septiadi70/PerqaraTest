@@ -54,15 +54,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem = backBarButtonItem
-        navigationItem.rightBarButtonItem = loveBarButtonItem
-        
-        starImageView.tintColor = .orange
-        starImageView.image = UIImage(systemName: "star.fill")
-        
-        controllerImageView.tintColor = UIColor(named: "MainBlueTint")
-        controllerImageView.image = UIImage(systemName: "gamecontroller")
-        
+        configureUI()
         configBinding()
         viewModel.loadDetail()
     }
@@ -72,6 +64,17 @@ class DetailViewController: UIViewController {
 // MARK: - Helpers
 
 extension DetailViewController {
+    private func configureUI() {
+        navigationItem.leftBarButtonItem = backBarButtonItem
+        navigationItem.rightBarButtonItem = loveBarButtonItem
+        
+        starImageView.tintColor = .orange
+        starImageView.image = UIImage(systemName: "star.fill")
+        
+        controllerImageView.tintColor = UIColor(named: "MainBlueTint")
+        controllerImageView.image = UIImage(systemName: "gamecontroller")
+    }
+    
     private func reloadViews() {
         gameImageView.image = nil
         if let imageURL = viewModel.getBackgroundImageURL() {
