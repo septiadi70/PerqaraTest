@@ -14,6 +14,7 @@ final class ListFavoritesViewModel {
     
     @Published var games = [GameModel]()
     @Published var isLoading = false
+    @Published var error: Error?
     
     init(useCase: ListFavoritesUseCaseProtocol) {
         self.useCase = useCase
@@ -29,7 +30,7 @@ final class ListFavoritesViewModel {
             .sink { [weak self] completion in
                 self?.isLoading = false
                 switch completion {
-                case .failure(let err): print(err)
+                case .failure(let err): self?.error = err
                 case .finished: break
                 }
             } receiveValue: { [weak self] output in
@@ -49,7 +50,7 @@ final class ListFavoritesViewModel {
             try useCase.removeGameEntity(gameModel: gameModel)
             games.remove(at: index)
         } catch {
-            print(error)
+            self.error = error
         }
     }
 }
