@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2778D8552A8DFA0E0077C8AA /* ListGamesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2778D8542A8DFA0E0077C8AA /* ListGamesUseCase.swift */; };
 		277979B82A8B8381009F9EEB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979B62A8B8381009F9EEB /* DetailViewController.swift */; };
 		277979B92A8B8381009F9EEB /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 277979B72A8B8381009F9EEB /* DetailViewController.xib */; };
 		277979BD2A8B8799009F9EEB /* LoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277979BC2A8B8799009F9EEB /* LoveButton.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2778D8542A8DFA0E0077C8AA /* ListGamesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGamesUseCase.swift; sourceTree = "<group>"; };
 		277979B62A8B8381009F9EEB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		277979B72A8B8381009F9EEB /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		277979BC2A8B8799009F9EEB /* LoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveButton.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				2785FBF02A8DD0060012A638 /* RemoteDataSourceTests.swift */,
 				2785FBF42A8DE4380012A638 /* LocalDataSourceTests.swift */,
 				2785FBFC2A8DF1970012A638 /* GameRepositoryTests.swift */,
+				2778D8542A8DFA0E0077C8AA /* ListGamesUseCase.swift */,
 			);
 			path = PerqaraTestTests;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2785FBF52A8DE4380012A638 /* LocalDataSourceTests.swift in Sources */,
+				2778D8552A8DFA0E0077C8AA /* ListGamesUseCase.swift in Sources */,
 				2785FBF72A8DE8F30012A638 /* TestPersistenceController.swift in Sources */,
 				2785FBF92A8DF0810012A638 /* MockGameLocalDataSource.swift in Sources */,
 				2785FBFD2A8DF1970012A638 /* GameRepositoryTests.swift in Sources */,
