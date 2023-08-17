@@ -10,6 +10,7 @@ import Combine
 
 protocol ListFavoritesUseCaseProtocol {
     func getGames() -> AnyPublisher<[GameModel], Error>
+    func removeGameEntity(gameModel: GameModel) throws
 }
 
 final class ListFavoritesUseCase: ListFavoritesUseCaseProtocol {
@@ -21,5 +22,9 @@ final class ListFavoritesUseCase: ListFavoritesUseCaseProtocol {
     
     func getGames() -> AnyPublisher<[GameModel], Error> {
         repository.getLocalGames()
+    }
+    
+    func removeGameEntity(gameModel: GameModel) throws {
+        try repository.removeGameEntity(gameModel: gameModel)
     }
 }

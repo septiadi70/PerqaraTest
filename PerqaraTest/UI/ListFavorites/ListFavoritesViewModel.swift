@@ -42,4 +42,14 @@ final class ListFavoritesViewModel {
         guard index < games.count else { return nil }
         return games[index]
     }
+    
+    func removeGameModel(index: Int) {
+        guard let gameModel = getGame(index: index) else { return }
+        do {
+            try useCase.removeGameEntity(gameModel: gameModel)
+            games.remove(at: index)
+        } catch {
+            print(error)
+        }
+    }
 }

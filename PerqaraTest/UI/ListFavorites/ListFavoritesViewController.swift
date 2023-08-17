@@ -114,4 +114,10 @@ extension ListFavoritesViewController: UITableViewDataSource, UITableViewDelegat
             navigationController?.pushViewController(detailViewController, animated: true)
         }
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.removeGameModel(index: indexPath.row)
+        }
+    }
 }
