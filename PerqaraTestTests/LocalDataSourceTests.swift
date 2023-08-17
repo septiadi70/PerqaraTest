@@ -24,7 +24,7 @@ final class LocalDataSourceTests: XCTestCase {
     }
     
     func testGameLocalDataSource() throws {
-        try dataSource.saveProduct(gameModel: LocalDataSourceTests.sampleGameModel())
+        try dataSource.saveGame(gameModel: LocalDataSourceTests.sampleGameModel())
         
         /// Test for get detail game entity
         var error: Error?

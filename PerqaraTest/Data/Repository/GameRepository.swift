@@ -29,7 +29,7 @@ final class GameRepository: GameRepositoryProtocol {
     }
     
     func saveGameModel(model: GameModel) throws {
-        try local.saveProduct(gameModel: model)
+        try local.saveGame(gameModel: model)
     }
     
     func removeGameEntity(gameModel: GameModel) throws {

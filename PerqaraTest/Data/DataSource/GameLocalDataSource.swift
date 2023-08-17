@@ -16,7 +16,7 @@ final class GameLocalDataSource: GameLocalDataSourceProtocol {
         self.persistenceController = persistenceController
     }
     
-    func saveProduct(gameModel model: GameModel) throws {
+    func saveGame(gameModel model: GameModel) throws {
         let moc = persistenceController.viewContext
         let _ = GameModelMapper.mapModelToEntity(model: model, moc: moc)
         try moc.save()

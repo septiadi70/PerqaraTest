@@ -20,7 +20,7 @@ class MockGameLocalDataSource: GameLocalDataSourceProtocol {
         self.persistenceController = persistenceController
     }
     
-    func saveProduct(gameModel model: GameModel) throws {
+    func saveGame(gameModel model: GameModel) throws {
         self.model = model
         let entity = GameEntity(context: persistenceController.viewContext)
         entity.id = Int32(model.id)
