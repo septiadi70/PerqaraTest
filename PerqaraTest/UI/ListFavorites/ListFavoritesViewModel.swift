@@ -13,17 +13,21 @@ final class ListFavoritesViewModel {
     private var bags = Set<AnyCancellable>()
     
     @Published var games = [GameModel]()
+    @Published var isLoading = false
     
     init(useCase: ListFavoritesUseCaseProtocol) {
         self.useCase = useCase
     }
     
     func loadGames() {
+        guard !isLoading else { return }
+        isLoading = true
         useCase
             .getGames()
             .subscribe(on: DispatchQueue.global(qos: .background))
             .receive(on: RunLoop.main)
-            .sink { completion in
+            .sink { [weak self] completion in
+                self?.isLoading = false
                 switch completion {
                 case .failure(let err): print(err)
                 case .finished: break

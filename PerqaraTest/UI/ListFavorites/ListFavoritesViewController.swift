@@ -14,6 +14,13 @@ class ListFavoritesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        control.tintColor = .lightGray
+        control.addTarget(self, action: #selector(refreshControlDidValueChanged(_:)), for: .valueChanged)
+        return control
+    }()
+    
     struct K {
         static let cellId = "CellId"
     }
@@ -34,7 +41,9 @@ class ListFavoritesViewController: UIViewController {
 
         configTable()
         configBinding()
-        viewModel.loadGames()
+        
+        tableView.refreshControl?.beginRefreshing()
+        refreshControlDidValueChanged(refreshControl)
     }
 
 }
@@ -47,6 +56,7 @@ extension ListFavoritesViewController {
         tableView.delegate = self
         tableView.rowHeight = 100.0
         tableView.separatorStyle = .none
+        tableView.refreshControl = refreshControl
         tableView.register(GameTableViewCell.nib(), forCellReuseIdentifier: K.cellId)
     }
     
@@ -58,6 +68,24 @@ extension ListFavoritesViewController {
                 self?.tableView.reloadData()
             }
             .store(in: &bags)
+        
+        viewModel
+            .$isLoading
+            .receive(on: RunLoop.main)
+            .sink { [weak self] isLoading in
+                if !isLoading {
+                    self?.tableView.refreshControl?.endRefreshing()
+                }
+            }
+            .store(in: &bags)
+    }
+}
+
+// MARK: - Actions
+
+extension ListFavoritesViewController {
+    @objc func refreshControlDidValueChanged(_ sender: UIRefreshControl) {
+        viewModel.loadGames()
     }
 }
 
