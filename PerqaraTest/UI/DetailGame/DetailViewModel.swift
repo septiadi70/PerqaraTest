@@ -16,6 +16,7 @@ final class DetailViewModel {
     @Published var isLoading = false
     @Published var gameModel: GameModel?
     @Published var localGameModel: GameModel?
+    @Published var error: Error?
     
     init(useCase: DetailGameUseCaseProtocol, gameId: Int) {
         self.useCase = useCase
@@ -35,7 +36,7 @@ final class DetailViewModel {
                 self?.isLoading = false
                 
                 switch completion {
-                case .failure(let err): print(err)
+                case .failure(let err): self?.error = err
                 case .finished: break
                 }
             } receiveValue: { [weak self] output in
@@ -89,7 +90,7 @@ final class DetailViewModel {
             try useCase.saveGameModel(model: gameModel)
             localGameModel = gameModel
         } catch {
-            print(error)
+            self.error = error
         }
     }
     
@@ -99,7 +100,7 @@ final class DetailViewModel {
             try useCase.removeGameEntity(gameModel: gameModel)
             localGameModel = nil
         } catch {
-            print(error)
+            self.error = error
         }
     }
 }
