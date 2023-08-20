@@ -8,6 +8,8 @@
 import Foundation
 
 final class NetworkService {
+    static let shared = NetworkService()
+    
     private func getRequest(endpoint: NetworkEndpointProtocol) throws -> URLRequest {
         let urlString = endpoint.baseURL + endpoint.path
         

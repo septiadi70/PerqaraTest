@@ -9,7 +9,7 @@ import Foundation
 
 final class Injection {
     private static func provideGameRemoteDataSource() -> GameRemoteDataSourceProtocol {
-        GameRemoteDataSource(networkService: NetworkService())
+        GameRemoteDataSource(networkService: NetworkService.shared)
     }
     
     private static func provideGameLocalDataSource() -> GameLocalDataSourceProtocol {
